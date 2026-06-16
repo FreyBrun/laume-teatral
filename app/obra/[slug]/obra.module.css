@@ -31,9 +31,10 @@
   }
   .cartel {
     flex: 0 0 auto;
-    width: 290px;
+    /* Sized so the poster's height ≈ the description block on the left. */
+    width: 172px;
     max-width: none;
-    margin-top: 6px;
+    margin-top: 4px;
   }
 }
 

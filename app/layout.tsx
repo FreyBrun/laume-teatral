@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Newsreader, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Newsreader, Space_Grotesk, Space_Mono, Gabarito } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
 
@@ -26,6 +26,13 @@ const mono = Space_Mono({
   display: "swap",
 });
 
+/* simplescenes.studio brand font — used only for the studio credit. */
+const display = Gabarito({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
@@ -47,7 +54,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
+    <html
+      lang="es"
+      className={`${serif.variable} ${sans.variable} ${mono.variable} ${display.variable}`}
+    >
       <body>
         <a className="skip-link" href="#main">
           Saltar al contenido

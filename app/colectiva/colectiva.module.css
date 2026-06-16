@@ -42,6 +42,20 @@
   color: var(--muted-2);
 }
 
+.galleryLink {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--vermillion);
+  text-decoration: none;
+  border-bottom: 2px solid var(--vermillion);
+  padding-bottom: 2px;
+}
+.galleryLink:hover {
+  background: rgba(193, 66, 40, 0.08);
+}
+
 .groupPhoto {
   width: 100%;
 }

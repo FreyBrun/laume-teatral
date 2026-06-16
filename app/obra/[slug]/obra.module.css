@@ -7,6 +7,34 @@
 /* —— Title —— */
 .titleBlock {
   margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.titleText {
+  min-width: 0;
+}
+.cartel {
+  width: 100%;
+  max-width: 230px;
+}
+
+@media (min-width: 760px) {
+  .titleBlock {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 36px;
+  }
+  .titleText {
+    flex: 1 1 auto;
+  }
+  .cartel {
+    flex: 0 0 auto;
+    width: 290px;
+    max-width: none;
+    margin-top: 6px;
+  }
 }
 
 .eyebrow {

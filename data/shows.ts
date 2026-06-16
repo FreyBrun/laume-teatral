@@ -5,6 +5,8 @@
  * Seeded with the real production «No es ficción» (datos del cartel oficial).
  * Edit here — no redesign needed.
  */
+import type { Photo } from "./gallery";
+
 export type Performance = {
   /** Human label, e.g. "Sábado 4 de julio". */
   date: string;
@@ -51,6 +53,8 @@ export type Show = {
   materials: string[];
   /** Funciones. */
   performances: Performance[];
+  /** Fotografías de la temporada. Vacío ⇒ marcador "próximamente". */
+  gallery?: Photo[];
 };
 
 export const shows: Show[] = [

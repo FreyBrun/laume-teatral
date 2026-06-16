@@ -3,6 +3,9 @@
   margin: 60px auto 0;
   padding: 26px 20px 40px;
   border-top: 3px solid var(--ink);
+}
+
+.row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,7 +28,6 @@
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: var(--muted-2);
 }
 
 .link {
@@ -36,8 +38,46 @@
   text-decoration: underline;
 }
 
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(34, 29, 24, 0.18);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted-2);
+}
+
 .colophon {
   color: var(--muted-2);
+}
+
+/* simplescenes.studio credit — in their own brand font + colour. */
+.studio {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  font-family: var(--font-display), system-ui, sans-serif;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+.studioBy {
+  color: var(--muted-2);
+  font-weight: 500;
+  font-size: 12px;
+}
+.studioName {
+  color: #c96e4c; /* simplescenes.studio brand */
+  font-weight: 700;
+  font-size: 14px;
+}
+.studio:hover .studioName {
+  text-decoration: underline;
 }
 
 @media (min-width: 768px) {

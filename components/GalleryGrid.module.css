@@ -1,0 +1,38 @@
+.masonry {
+  column-count: 1;
+  column-gap: 16px;
+}
+
+.item {
+  position: relative;
+  break-inside: avoid;
+  margin: 0 0 16px;
+  border: 2px solid var(--ink);
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Shared inset shadow so the set reads as one treatment. */
+.inset {
+  position: absolute;
+  inset: 0;
+  box-shadow: var(--image-inset);
+  pointer-events: none;
+}
+
+@media (min-width: 560px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 880px) {
+  .masonry {
+    column-count: 3;
+  }
+}

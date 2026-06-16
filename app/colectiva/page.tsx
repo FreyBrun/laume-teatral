@@ -40,6 +40,9 @@ export default function ColectivaPage() {
               cercanía donde la historia continúa en la conversación, mucho
               después de que cae el telón.
             </p>
+            <Link href="/galeria" className={styles.galleryLink}>
+              Ver la galería de la colectiva →
+            </Link>
           </div>
 
           <Figure

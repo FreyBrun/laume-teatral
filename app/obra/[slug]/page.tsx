@@ -44,14 +44,31 @@ export default async function ObraPage({
       <Header context={<Link href="/">← volver al índice</Link>} />
 
       <main id="main" className={styles.main}>
-        {/* —— Title block —— */}
+        {/* —— Title block (+ cartel) —— */}
         <div className={styles.titleBlock}>
-          <p className={styles.eyebrow}>OBRA 01 · {show.season.toUpperCase()}</p>
-          <h1 className={styles.title}>{show.title}</h1>
-          <p className={styles.tagline}>{show.tagline}</p>
-          <p className={styles.credit}>Dramaturgia y dirección de {show.author}</p>
-          {show.contentNoteEs ? (
-            <p className={styles.contentNote}>{show.contentNoteEs}</p>
+          <div className={styles.titleText}>
+            <p className={styles.eyebrow}>OBRA 01 · {show.season.toUpperCase()}</p>
+            <h1 className={styles.title}>{show.title}</h1>
+            <p className={styles.tagline}>{show.tagline}</p>
+            <p className={styles.credit}>
+              Dramaturgia y dirección de {show.author}
+            </p>
+            {show.contentNoteEs ? (
+              <p className={styles.contentNote}>{show.contentNoteEs}</p>
+            ) : null}
+          </div>
+
+          {show.posterImage ? (
+            <Figure
+              className={styles.cartel}
+              src={show.posterImage}
+              alt={`Cartel de la obra ${show.title}.`}
+              ratio="2 / 3"
+              rotate={-3}
+              figId="cartel"
+              sizes="(min-width: 760px) 290px, 66vw"
+              priority
+            />
           ) : null}
         </div>
 

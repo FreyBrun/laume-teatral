@@ -1,0 +1,131 @@
+.main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 40px 20px 0;
+}
+
+/* —— Statement —— */
+.statement {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--vermillion);
+  margin-bottom: 14px;
+}
+
+.manifesto {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(24px, 5vw, 36px);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+
+.support {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.note {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted-2);
+}
+
+.groupPhoto {
+  width: 100%;
+}
+
+/* —— Ensemble —— */
+.ensemble {
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 2px solid var(--ink);
+}
+
+.ensembleHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.ensembleTitle {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.ensembleNote {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 180ms ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.cardName {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-top: 9px;
+}
+
+.cardDisciplines {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--vermillion);
+  margin-top: 4px;
+}
+
+.cardBio {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+@media (min-width: 880px) {
+  .main {
+    padding: 46px 30px 0;
+  }
+  .statement {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+  }
+  .groupPhoto {
+    max-width: 360px;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,53 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--paper-chrome);
+  border-bottom: 1px solid var(--ink);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.mark {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.wordmarkText {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.context {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.context:hover {
+  color: var(--ink);
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 12px 30px;
+  }
+  .mark {
+    height: 34px;
+  }
+}

@@ -1,0 +1,58 @@
+.frame {
+  position: relative;
+  display: block;
+  margin: 0;
+  border-style: solid;
+  border-color: var(--ink);
+  overflow: hidden;
+  background: var(--paper-card);
+}
+
+.img {
+  object-fit: cover;
+}
+
+/* Inset shadow laid over the photo so all images share one treatment. */
+.inset {
+  position: absolute;
+  inset: 0;
+  box-shadow: var(--image-inset);
+  pointer-events: none;
+}
+
+/* Empty-state: diagonal hatch + inset shadow (handoff §5, §6). */
+.hatch {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    #d6cbb0 0 11px,
+    #bdb295 11px 22px
+  );
+  box-shadow: var(--image-inset);
+}
+
+.figLabel {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: var(--paper);
+  padding: 2px 6px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: var(--paper);
+  padding: 2px 7px;
+  max-width: calc(100% - 24px);
+}

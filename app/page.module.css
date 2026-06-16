@@ -1,167 +1,273 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+/* ===== HOME — mobile-first; title + poster side by side at md+ ===== */
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+.hero {
+  padding: 34px 20px 0;
 }
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
+.heroInner {
+  max-width: 980px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  gap: 26px;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+/* Title — ghost + ink double (contained; never over the image) */
+.titleWrap {
+  position: relative;
 }
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
+.title,
+.titleGhost {
+  font-family: var(--serif);
   font-weight: 600;
+  font-size: clamp(50px, 15vw, 104px);
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.title {
+  position: relative;
+  color: var(--ink);
+  z-index: 2;
+}
+.titleGhost {
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  color: var(--vermillion-ghost);
+  z-index: 1;
+  user-select: none;
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
+.tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--muted);
+  margin-top: 16px;
+  max-width: 360px;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+.scrollHint {
+  display: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted-2);
+  margin-top: 18px;
+}
+
+/* Poster */
+.posterLink {
+  display: block;
+  width: 100%;
+}
+.heroImg {
+  width: 100%;
+  max-width: 280px;
+}
+
+/* ===== Fragments ===== */
+.fragments {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 44px 20px 0;
+}
+.fragHeading {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.fragField {
   display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid var(--ink);
+  background: var(--paper-card);
+  padding: 16px;
+  box-shadow: var(--card-shadow);
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 200ms ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--vermillion);
+}
+.metaTeal {
+  color: var(--teal);
+}
+
+.cardTitle {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.05;
+}
+
+.cardText {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.thumbRow {
+  display: flex;
+  gap: 7px;
+}
+.thumbRow figure {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.matRow {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.matThumb {
+  width: 66px;
+  flex: 0 0 auto;
+}
+
+/* The seal — the way to the box office */
+.sealWrap {
+  text-align: center;
+  padding: 8px 0 4px;
+}
+.sealLead {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.seal {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: var(--ink);
+  color: var(--paper);
+  border: 2px solid var(--ink);
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 5px 5px 0 rgba(193, 66, 40, 0.42);
+  transition: transform 200ms ease;
+}
+.seal:hover {
+  transform: translateY(-2px);
+}
+.sealStep {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--apricot);
+}
+.sealTitle {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.04;
+  margin-top: 3px;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
-}
-
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
-  flex-shrink: 0;
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+/* ============================================================
+   md+ : title left, poster right; scattered fragments
+   ============================================================ */
+@media (min-width: 880px) {
+  .hero {
+    padding: 54px 30px 0;
   }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
+  .heroInner {
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+  .heroText {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .titleGhost {
+    top: 8px;
+    left: 6px;
+  }
+  .tagline {
+    font-size: 20px;
+    max-width: 340px;
+  }
+  .scrollHint {
+    display: block;
+  }
+  .posterLink {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .heroImg {
+    width: 300px;
+    max-width: none;
   }
 
-  .main ol {
-    text-align: center;
+  /* Fragments scattered & rotated */
+  .fragField {
+    display: block;
+    position: relative;
+    height: 486px;
   }
-
-  .ctas {
-    flex-direction: column;
+  .card {
+    position: absolute;
   }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
+  .cardObra {
+    top: 8px;
+    left: 6px;
+    width: 332px;
+    transform: rotate(-1.6deg);
   }
-
-  a.secondary {
-    min-width: auto;
+  .cardObra:hover {
+    transform: translateY(-3px) rotate(0deg);
   }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  .cardElenco {
+    top: 42px;
+    left: 366px;
+    width: 344px;
+    transform: rotate(1.4deg);
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .cardElenco:hover {
+    transform: translateY(-3px) rotate(0deg);
+  }
+  .cardMateriales {
+    top: 222px;
+    left: 148px;
+    width: 312px;
+    transform: rotate(-0.8deg);
+    z-index: 5;
+  }
+  .cardMateriales:hover {
+    transform: translateY(-3px) rotate(0deg);
+    z-index: 6;
+  }
+  .sealWrap {
+    position: absolute;
+    top: 244px;
+    right: 6px;
+    width: 212px;
   }
 }

@@ -6,21 +6,24 @@
 
 :root {
   /* —— Color —— */
-  --paper: #ece3d0;          /* primary background (parchment) */
-  --paper-card: #f5efe0;     /* raised fragment cards */
-  --paper-chrome: #e4dac3;   /* header / browser-chrome band */
-  --ink: #221d18;            /* primary text, borders, dark booking bg */
-  --ink-soft: #3a3531;       /* body copy on paper */
-  --muted: #5f5847;          /* secondary text, captions */
-  --muted-2: #8a7f64;        /* mono labels, fine print */
-  --vermillion: #c14228;     /* accent: numbers, footnotes, CTA, "ES" */
-  --vermillion-ghost: rgba(193, 66, 40, 0.26); /* ghost layer behind title */
-  --teal: #2e5d57;           /* secondary accent */
-  --apricot: #e2a08e;        /* accent on the dark booking screen */
-  --paper-on-dark: #ece3d0;  /* text on dark booking screen */
-  --muted-on-dark: #9c8f7e;  /* secondary text on dark */
-  --hairline-dark: #3a342c;  /* dividers on dark */
-  --border-dark: #6a5f4f;    /* control outlines on dark */
+  --paper: #f1eee9;          /* primary background: logo off-white */
+  --paper-card: #fffaf0;     /* raised fragment cards */
+  --paper-chrome: #ebe3d7;   /* header / browser-chrome band */
+  --ink: #111312;            /* primary text, borders, dark booking bg */
+  --ink-soft: #2d2a26;       /* body copy on paper */
+  --muted: #62594d;          /* secondary text, captions */
+  --muted-2: #8b7a5d;        /* mono labels, fine print */
+  --accent: #c9961a;         /* logo flame gold */
+  --accent-soft: rgba(201, 150, 26, 0.14);
+  --accent-shadow: rgba(201, 150, 26, 0.42);
+  --vermillion: var(--accent); /* legacy accent token used across modules */
+  --vermillion-ghost: rgba(201, 150, 26, 0.27); /* ghost layer behind title */
+  --teal: #254f49;           /* secondary accent */
+  --apricot: #e3bd66;        /* accent on the dark booking screen */
+  --paper-on-dark: #f1eee9;  /* text on dark booking screen */
+  --muted-on-dark: #b8aa91;  /* secondary text on dark */
+  --hairline-dark: #34302b;  /* dividers on dark */
+  --border-dark: #756a58;    /* control outlines on dark */
 
   /* —— Type families (next/font sets the --font-* vars) —— */
   --serif: var(--font-serif), Georgia, "Times New Roman", serif;
@@ -28,9 +31,9 @@
   --mono: var(--font-mono), ui-monospace, "SFMono-Regular", monospace;
 
   /* —— Shape & shadow —— */
-  --card-shadow: 6px 6px 0 rgba(34, 29, 24, 0.14); /* hard offset, no blur */
-  --image-inset: inset 0 0 60px rgba(60, 48, 30, 0.32);
-  --frame-shadow: 0 26px 64px -30px rgba(26, 23, 20, 0.55);
+  --card-shadow: 6px 6px 0 rgba(17, 19, 18, 0.14); /* hard offset, no blur */
+  --image-inset: inset 0 0 60px rgba(33, 28, 20, 0.3);
+  --frame-shadow: 0 26px 64px -30px rgba(17, 19, 18, 0.5);
 
   /* —— Rhythm —— */
   --pad-section: 30px;       /* desktop */

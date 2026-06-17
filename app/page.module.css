@@ -170,7 +170,7 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
-  box-shadow: 5px 5px 0 rgba(193, 66, 40, 0.42);
+  box-shadow: 5px 5px 0 var(--accent-shadow);
   transition: transform 200ms ease;
 }
 .seal:hover {

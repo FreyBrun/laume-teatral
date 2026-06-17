@@ -241,7 +241,7 @@
   text-decoration: none;
 }
 .cruzar:hover {
-  background: rgba(193, 66, 40, 0.08);
+  background: var(--accent-soft);
 }
 .umbralNote {
   font-family: var(--mono);

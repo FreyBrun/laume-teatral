@@ -33,8 +33,7 @@ export default function Home() {
               </div>
 
               <p className={styles.tagline}>
-                Teatro hecho por mujeres — para interpelar y replantear lo que se
-                da por sentado sobre lo que es ser mujer.
+                Hablamos de lo que nos inquieta desde lo humano, en lo colectivo y en lo íntimo.
               </p>
 
               <p className={styles.scrollHint} aria-hidden="true">

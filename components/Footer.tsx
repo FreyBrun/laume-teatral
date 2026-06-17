@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.row}>
         <p className={styles.tagline}>
-          Teatro hecho por mujeres — en la {SITE.city}.
+          Hablamos de lo que nos inquieta — en la {SITE.city}.
         </p>
         <nav className={styles.meta} aria-label="Enlaces">
           <Link className={styles.link} href="/galeria">

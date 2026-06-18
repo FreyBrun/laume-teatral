@@ -72,18 +72,6 @@ export const members: Member[] = [
       "Su formación comenzó en el Taller de Iniciación a la Actuación (julio 2024), impartido por Ramón Cadaval. Posteriormente cursó el Diplomado Intensivo de Actuación 2024–2025 en CasAzul, con Akira Ishikawa en actuación, Bernardo Kasis Galán en cuerpo y movimiento, y Enrique Olmos de Ita en conocimientos teóricos. Complementó su preparación con el taller Pensar el Arte de la Actuación (2024) en Casa del Teatro, impartido por Luis de Tavira. Continuó su formación en CasAzul con los talleres de Actuación Realista (2025), con Ana Isabel Esqueira, y de Actores Contemporáneos para Cine, Teatro y Televisión (2025), con Azalia Ortiz. Cursó el Diplomado Actuar Frente a la Cámara (2025) con Sonia Couoh y Alistair Pulido, y formó parte del Taller de Combate Escénico (2025) del Colectivo Marea Roja. Recientemente finalizó el primer módulo del taller de Actuación Realista (2026) con Gabriela Cartol. Apasionada por el cine, cursó estudios sobre la Nouvelle Vague (2026) con Raúl Ojanguren, ampliando su mirada sobre la actuación y el lenguaje cinematográfico.",
     portrait: "/img/maria.jpg",
   },
-  {
-    slug: "zaira-barrera",
-    name: "Zaira Barrera",
-    disciplines: ["dramaturgia", "iluminación", "teatro"],
-    roleTag: "escena",
-    bioEs: "Literatura dramática y teatro. Iluminación y traspunte.",
-    fullBioEs:
-      "Egresada de la Licenciatura en Literatura Dramática y Teatro en la Facultad de Filosofía y Letras, con formación en cursos, talleres y un diplomado de actuación en CasAzul. Ha participado con OPEM A.C. en la obra «Martinillo» de Indra Sotomayor y Nael De Anda, dentro del programa de la III Feria Universitaria de Arte (2018), en la II OFF Muestra Nacional de Teatro (2018) y en el Día Internacional de la Danza (2019); y en «La Venganza del Chaneque Cojo» en el Festival Dramaturgias Comunitarias (2019). En ellas diseñó la iluminación y, durante la presentación, fungió como traspunte, apoyando a los técnicos del teatro.",
-    // Sin retrato todavía — usa el estado vacío diseñado. Añade /img/zaira.jpg
-    // y descomenta para activarlo.
-    // portrait: "/img/zaira.jpg",
-  },
 ];
 
 /** Lookup by slug. */

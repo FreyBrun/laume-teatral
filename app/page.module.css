@@ -56,7 +56,7 @@
   margin-top: 18px;
 }
 
-/* Poster */
+/* Featured collective portrait */
 .posterLink {
   display: block;
   width: 100%;
@@ -134,16 +134,6 @@
   min-width: 0;
 }
 
-.matRow {
-  display: flex;
-  gap: 9px;
-  align-items: center;
-}
-.matThumb {
-  width: 66px;
-  flex: 0 0 auto;
-}
-
 /* The seal — the way to the box office */
 .sealWrap {
   text-align: center;
@@ -189,8 +179,43 @@
   margin-top: 3px;
 }
 
+.booking {
+  max-width: 980px;
+  margin: 8px auto 0;
+  padding: 34px 20px 42px;
+  border-top: 2px solid var(--ink);
+}
+.bookingEyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.bookingTitle {
+  max-width: 18ch;
+  font-family: var(--serif);
+  font-size: clamp(28px, 6vw, 42px);
+  line-height: 1.08;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+.bookingLink {
+  display: inline-block;
+  padding: 12px 16px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--accent-shadow);
+  transition: transform 180ms ease;
+}
+.bookingLink:hover {
+  transform: translateY(-2px);
+}
+
 /* ============================================================
-   md+ : title left, poster right; scattered fragments
+   md+ : title left, collective portrait right; scattered fragments
    ============================================================ */
 @media (min-width: 880px) {
   .hero {
@@ -230,7 +255,7 @@
   .fragField {
     display: block;
     position: relative;
-    height: 486px;
+    height: 530px;
   }
   .card {
     position: absolute;
@@ -238,7 +263,7 @@
   .cardObra {
     top: 8px;
     left: 6px;
-    width: 332px;
+    width: 280px;
     transform: rotate(-1.6deg);
   }
   .cardObra:hover {
@@ -246,28 +271,32 @@
   }
   .cardElenco {
     top: 42px;
-    left: 366px;
+    left: 324px;
     width: 344px;
     transform: rotate(1.4deg);
   }
   .cardElenco:hover {
     transform: translateY(-3px) rotate(0deg);
   }
-  .cardMateriales {
-    top: 222px;
-    left: 148px;
-    width: 312px;
-    transform: rotate(-0.8deg);
-    z-index: 5;
-  }
-  .cardMateriales:hover {
-    transform: translateY(-3px) rotate(0deg);
-    z-index: 6;
-  }
   .sealWrap {
     position: absolute;
-    top: 244px;
-    right: 6px;
+    top: 264px;
+    right: 8px;
     width: 212px;
+  }
+  .booking {
+    padding: 42px 30px 52px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    column-gap: 48px;
+  }
+  .bookingEyebrow,
+  .bookingTitle {
+    grid-column: 1;
+  }
+  .bookingLink {
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 }

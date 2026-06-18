@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Figure from "@/components/Figure";
 import { shows, getShow } from "@/data/shows";
-import { getMember } from "@/data/members";
+import { TICKETS } from "@/lib/site";
 import styles from "./obra.module.css";
 
 type Params = { slug: string };
@@ -36,8 +36,6 @@ export default async function ObraPage({
   const { slug } = await params;
   const show = getShow(slug);
   if (!show) notFound();
-
-  const matRotations = [2, -3, 1.5];
 
   return (
     <>
@@ -111,27 +109,9 @@ export default async function ObraPage({
           </aside>
         </div>
 
-        {/* —— Ficha técnica —— */}
+        {/* —— Ficha técnica y boletos —— */}
         <div className={styles.ficha}>
-          <div>
-            <h2 className={styles.fichaHead}>Reparto</h2>
-            <ul className={styles.cast}>
-              {show.cast.map((cslug) => {
-                const m = getMember(cslug);
-                if (!m) return null;
-                return (
-                  <li key={cslug} className={styles.castRow}>
-                    <Link href={`/colectiva/${m.slug}`} className={styles.castName}>
-                      {m.name}
-                    </Link>
-                    <span className={styles.castTag}>{m.roleTag}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          <div>
+          <div className={styles.fichaDetails}>
             <h2 className={styles.fichaHead}>Ficha</h2>
             <dl className={styles.fichaList}>
               <div>
@@ -163,41 +143,23 @@ export default async function ObraPage({
                 <dd>{show.classification}</dd>
               </div>
             </dl>
+          </div>
 
-            {/* The deliberate, in-page route to tickets — the ONLY entry. */}
-            <div className={styles.umbral}>
-              <span className={styles.vienes}>¿Vienes?</span>
-              <Link href="/umbral" className={styles.cruzar}>
-                cruzar el umbral →
-              </Link>
-            </div>
+          <aside className={styles.bookingPanel} aria-label="Reservar boletos">
+            <span className={styles.vienes}>¿Vienes?</span>
+            <a
+              href={TICKETS.whatsapp}
+              className={styles.cruzar}
+              target="_blank"
+              rel="noreferrer"
+            >
+              reservar boletos →
+            </a>
             <p className={styles.umbralNote}>
               los boletos se reservan por WhatsApp y en taquilla
             </p>
-          </div>
+          </aside>
         </div>
-
-        {/* —— Materiales —— */}
-        <section id="materiales" className={styles.materiales}>
-          <h2 className={styles.materialesHead}>Materiales del montaje</h2>
-          <div className={styles.materialesRow}>
-            {show.materials.map((src, i) => (
-              <Figure
-                key={src}
-                className={styles.materialThumb}
-                src={src}
-                alt={`Material del montaje de ${show.title} (${i + 1}).`}
-                ratio="1 / 1"
-                rotate={matRotations[i % matRotations.length]}
-                thin
-                sizes="120px"
-              />
-            ))}
-            <p className={styles.materialesCaption}>
-              fig.03–05 — bocetos, notas de dirección, fotos de ensayo
-            </p>
-          </div>
-        </section>
       </main>
 
       <Footer />

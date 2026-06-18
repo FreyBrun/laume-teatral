@@ -21,6 +21,6 @@ export const SITE = {
  */
 export const TICKETS = {
   whatsapp:
-    "https://api.whatsapp.com/send/?phone=525578797627&text&type=phone_number&app_absent=0",
+    "https://api.whatsapp.com/send/?phone=525578797627&text=Hola%2C%20quiero%20reservar%20boletos%20para%20No%20es%20ficci%C3%B3n.&type=phone_number&app_absent=0",
   phone: "5578797627",
 } as const;

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Figure from "@/components/Figure";
 import { featuredShow } from "@/data/shows";
 import { members } from "@/data/members";
+import { TICKETS } from "@/lib/site";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
       <Header context="índice no lineal" />
 
       <main id="main">
-        {/* ===== Hero — title and poster side by side, no overlap ===== */}
+        {/* ===== Hero ===== */}
         <section className={styles.hero} aria-label="Portada">
           <div className={styles.heroInner}>
             <div className={styles.heroText}>
@@ -42,17 +43,17 @@ export default function Home() {
             </div>
 
             <Link
-              href={obraHref}
+              href="/colectiva"
               className={styles.posterLink}
-              aria-label={`Ver la obra en cartel: ${show.title}`}
+              aria-label="Conocer a la colectiva LAUME Teatral"
             >
               <Figure
                 className={styles.heroImg}
-                src={show.posterImage}
-                alt={`Cartel de la obra ${show.title}.`}
+                src="/img/home-hero.jpg"
+                alt="Retrato de grupo de las integrantes de LAUME Teatral."
                 ratio="2 / 3"
-                rotate={2}
-                figId="cartel"
+                rotate={1.2}
+                figId="la colectiva"
                 sizes="(min-width: 880px) 360px, 78vw"
                 priority
               />
@@ -75,11 +76,11 @@ export default function Home() {
               </span>
               <span className={styles.cardTitle}>{show.title}</span>
               <Figure
-                src={show.heroImage}
-                alt=""
-                ratio="16 / 7"
+                src={show.posterImage}
+                alt={`Cartel de la obra ${show.title}.`}
+                ratio="2 / 3"
                 thin
-                sizes="(min-width: 760px) 300px, 88vw"
+                sizes="(min-width: 760px) 260px, 88vw"
               />
               <span className={styles.cardText}>
                 La obra en cartel. Notas de programa, sinopsis y ficha como una
@@ -109,34 +110,7 @@ export default function Home() {
                 ))}
               </span>
               <span className={styles.cardText}>
-                Seis nombres, seis disciplinas. Cada retrato abre su propia ficha.
-              </span>
-            </Link>
-
-            {/* fragmento 03 — materiales */}
-            <Link
-              href={`${obraHref}#materiales`}
-              className={`${styles.card} ${styles.cardMateriales}`}
-            >
-              <span className={styles.cardMeta}>
-                <span>fragmento</span>
-                <span>03 · materiales</span>
-              </span>
-              <span className={styles.matRow}>
-                {show.materials.slice(0, 2).map((src) => (
-                  <Figure
-                    key={src}
-                    className={styles.matThumb}
-                    src={src}
-                    alt=""
-                    ratio="1 / 1"
-                    thin
-                    sizes="66px"
-                  />
-                ))}
-                <span className={styles.cardText}>
-                  Bocetos, notas y fotos de ensayo. La marginalia del montaje.
-                </span>
+                Cinco nombres, cinco disciplinas. Cada retrato abre su propia ficha.
               </span>
             </Link>
 
@@ -151,6 +125,21 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </section>
+
+        <section className={styles.booking} aria-labelledby="booking-title">
+          <p className={styles.bookingEyebrow}>Funciones · 4 y 5 de julio · 7 PM</p>
+          <h2 id="booking-title" className={styles.bookingTitle}>
+            Reserva tu lugar para <i>No es ficción</i>
+          </h2>
+          <a
+            href={TICKETS.whatsapp}
+            className={styles.bookingLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Reservar boletos por WhatsApp →
+          </a>
         </section>
       </main>
 

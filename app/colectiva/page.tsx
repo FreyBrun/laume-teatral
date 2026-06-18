@@ -60,7 +60,7 @@ export default function ColectivaPage() {
         {/* —— The ensemble, equal —— */}
         <section className={styles.ensemble}>
           <div className={styles.ensembleHead}>
-            <h2 className={styles.ensembleTitle}>Las seis</h2>
+            <h2 className={styles.ensembleTitle}>Las cinco</h2>
             <p className={styles.ensembleNote}>
               misma escala · sin jerarquía · puede crecer o reducirse
             </p>
